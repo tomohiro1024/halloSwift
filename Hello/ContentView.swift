@@ -10,18 +10,27 @@ import SwiftUI
 struct ContentView: View {
     @State var text = "Hello"
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text(text)
-                .foregroundColor(.cyan)
-            Button("ボタン") {
-                text = "hogehoge"
-                print("tap")
+        ZStack {
+            Rectangle()
+                .foregroundColor(.green)
+                .frame(width: 300, height: 300)
+            VStack {
+                HStack {
+                    Rectangle()
+                        .foregroundColor(.red)
+                        .frame(width: 70, height: 70)
+                    Rectangle()
+                        .foregroundColor(.red)
+                        .frame(width: 70, height: 70)
+                }
+                Rectangle()
+                    .foregroundColor(.red)
+                    .frame(width: 50, height: 20)
+                Rectangle()
+                    .foregroundColor(.red)
+                    .frame(width: 80, height: 100)
             }
         }
-        .padding()
     }
 }
 
