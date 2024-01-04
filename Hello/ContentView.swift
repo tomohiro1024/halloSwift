@@ -12,12 +12,27 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 15) {
-            TextField("数字を入力", text: $inputText)
+            HStack {
+                TextField("数字を入力", text: $inputText)
+                    .keyboardType(.numberPad)
+                    .frame(width: 150)
+                Text("円")
+            }
+            
             Button("計算") {
                 
             }
-            Text("消費税8%: ")
-            Text("消費税10%: ")
+            HStack {
+                Text("消費税8%: " + inputText)
+                Text("円")
+            }
+            
+            HStack {
+                Text("消費税10%: ")
+                Text("円")
+            }
+            
+            
             
         }
         .padding()
