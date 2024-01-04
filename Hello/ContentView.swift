@@ -8,29 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var text = "Hello"
+    @State var inputText = ""
+    
     var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(.green)
-                .frame(width: 300, height: 300)
-            VStack {
-                HStack {
-                    Rectangle()
-                        .foregroundColor(.red)
-                        .frame(width: 70, height: 70)
-                    Rectangle()
-                        .foregroundColor(.red)
-                        .frame(width: 70, height: 70)
-                }
-                Rectangle()
-                    .foregroundColor(.red)
-                    .frame(width: 50, height: 20)
-                Rectangle()
-                    .foregroundColor(.red)
-                    .frame(width: 80, height: 100)
+        VStack(spacing: 15) {
+            TextField("数字を入力", text: $inputText)
+            Button("計算") {
+                
             }
+            Text("消費税8%: ")
+            Text("消費税10%: ")
+            
         }
+        .padding()
+        
     }
 }
 
