@@ -23,7 +23,7 @@ struct ContentView: View {
                 
             }
             HStack {
-                Text("消費税8%: " + inputText)
+                Text("消費税8%: \(inputText)")
                 Text("円")
             }
             
