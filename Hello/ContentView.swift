@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @State var inputText = ""
+    @State var tax8 = 0.0
+    @State var tax10 = 0.0
+    @State var formattedTax8 = ""
+    @State var formattedTax10 = ""
     
     var body: some View {
         VStack(spacing: 15) {
@@ -20,15 +24,18 @@ struct ContentView: View {
             }
             
             Button("計算") {
-                
+                tax8 = Double(inputText)! * 0.08
+                tax10 = Double(inputText)! * 0.1
+                formattedTax8 = String(format: "%.1f", tax8)
+                formattedTax10 = String(format: "%.1f", tax10)
             }
             HStack {
-                Text("消費税8%: \(inputText)")
+                Text("消費税8%: \(formattedTax8)")
                 Text("円")
             }
             
             HStack {
-                Text("消費税10%: ")
+                Text("消費税10%: \(formattedTax10)")
                 Text("円")
             }
             
